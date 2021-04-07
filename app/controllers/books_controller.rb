@@ -16,7 +16,7 @@ end
 
 def
   create
-  @book = Book.new(book params)
+  @book = Book.new(book_params)
   @book.user_id = current_user.id
   @book.save
   redirect_to book_path(book.id)
@@ -35,8 +35,8 @@ def
 end
 
 private
-def book params
-   params.require(:book).permit(:title, :body,)
+def book_params
+   params.require(:book).permit(:title, :body)
 end
 
 end

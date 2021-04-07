@@ -26,10 +26,13 @@
 <h2>New Book</h2>
 <p>Title</p>
 <%= form_with model:@book, local:true do |f| %>
+<div class="form-group">
+<label for="title1"><%= f.text_field :title %></label>
 
-<%= f.text_field :title %>
 <p>Opinion</p>
-<p><%= f.text_field :body %></p>
+<div class="form-group">
+<label for="body1"><%= f.text_field :body %></label>
+
 <%= f.submit 'Create Book',class:"btn btn-success" %>
 <% end %>
 
