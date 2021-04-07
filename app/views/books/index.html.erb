@@ -19,16 +19,18 @@
     </tr>
 </table>
 
-<p><%= link_to "編集", edit_user_path(current_user.id) %></p>
+
+<p><%= link_to "編集", edit_user_path(current_user.id),class:"btn btn-outline-secondary w-100 " %></p>
 
 
 <h2>New Book</h2>
 <p>Title</p>
 <%= form_with model:@book, local:true do |f| %>
- <%= f.text_field :title %>
+
+<%= f.text_field :title %>
 <p>Opinion</p>
 <p><%= f.text_field :body %></p>
-<%= f.submit 'Create Book' %>
+<%= f.submit 'Create Book',class:"btn btn-success" %>
 <% end %>
 
 </div>
