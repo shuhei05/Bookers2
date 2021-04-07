@@ -1,1 +1,14 @@
-<h1>ほんの一覧</h1>
+<h2>Book detail</h2>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <td><%= attachment_image_tag current_user, :profile_image, :fill,50, 50, format: 'jpeg', fallback: "no_image.jpg" %></br>
+            <%= @user.name %></td>
+            <td><%= @book.title %></td>
+            <td><%= @book.body %></td>
+            <td>edit</td>
+            <td>destroy</td>
+        </tr>
+    </tbody>
+</table>

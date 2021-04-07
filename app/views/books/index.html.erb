@@ -45,14 +45,27 @@
 
 <div class="col-lg-8">
 
-    <h2>Book detail</h2>
+    <h2>Book</h2>
 
     <table class="table">
+        <thead>
         <tr>
-            <th><%= attachment_image_tag current_user, :profile_image, :fill,20, 20, format: 'jpeg', fallback: "no_image.jpg" %></br>
-            <%= current_user.name %></th>
+
             <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
         </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <% @books.each do |book| %>
+            <td><%= attachment_image_tag current_user, :profile_image, :fill,20, 20, format: 'jpeg', fallback: "no_image.jpg" %></td>
+            <td><%= book.title %></td>
+            <td><%= book.body %></td>
+            <% end %>
+        </tr>
+        </tbody>
+    </table>
 
 </div>
 </div>
