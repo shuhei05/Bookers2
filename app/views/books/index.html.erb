@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-3">
-            <div class="h-25">
+<div class="col-lg-3">
+
 
 
 <h2>User info</h2>
@@ -27,16 +27,15 @@
 <p>Title</p>
 <%= form_with model:@book, local:true do |f| %>
 <div class="form-group">
-<label for="title1"><%= f.text_field :title %></label>
+<label for="title1"><%= f.text_field :title,class:"w-100"%></label>
 
 <p>Opinion</p>
 <div class="form-group">
-<label for="body1"><%= f.text_field :body %></label>
+<label for="body1"><%= f.text_area :body,class:"w-100" %></label>
 
 <%= f.submit 'Create Book',class:"btn btn-success" %>
 <% end %>
 
-</div>
 </div>
 </div>
 </div>
