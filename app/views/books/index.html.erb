@@ -57,13 +57,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
             <% @books.each do |book| %>
-            <td><%= attachment_image_tag current_user, :profile_image, :fill,20, 20, format: 'jpeg', fallback: "no_image.jpg" %></td>
-            <td><%= book.title %></td>
-            <td><%= book.body %></td>
+                <tr>
+
+                    <td><%= attachment_image_tag current_user, :profile_image, :fill,20, 20, format: 'jpeg', fallback: "no_image.jpg" %></td>
+                    <td><%= book.title %></td>
+                    <td><%= book.body %></td>
+
+                </tr>
             <% end %>
-        </tr>
         </tbody>
     </table>
 

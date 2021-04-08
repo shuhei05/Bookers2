@@ -1,0 +1,19 @@
+<div class="w-auto mx-auto mt-3" >
+  <h1>User info</h1>
+
+  <p>name</p>
+  <%= form_with model:@user, local:true do |f| %>
+<div class="form-group">
+<label for="user1"><%= f.text_field :name,class:"w-100"%></label>
+
+  <p>Image</p>
+ <%= f.attachment_field :profile_image%>
+ <p></p>
+
+<p>Introduction</p>
+<div class="form-group">
+<label for="user2"><%= f.text_area :introduction,class:"w-100" %></label>
+<p></p>
+
+<%= f.submit 'Update user',class:"btn btn-secondary" %>
+<% end %>
