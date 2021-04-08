@@ -3,7 +3,6 @@ class BooksController < ApplicationController
 def index
   @books = Book.all
   @book = Book.new
-  @user = User.all
 end
 
 def show
@@ -36,8 +35,9 @@ def
 end
 
 private
-def book_params
-   params.require(:book).permit(:title, :body)
-end
+  def book_params
+   params.require(:book).permit(:title, :body,)
+
+  end
 
 end
