@@ -1,1 +1,22 @@
 <%= render 'users/list', users: @users %>
+
+<div class="col-lg-8">
+    <h2>Users</h2>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>image</th>
+            <th>name</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            <% @users.each do |user| %>
+                <td><%= attachment_image_tag user ,:profile_image, :fill,20, 20, format: 'jpeg', fallback: "no_image.jpg" %></td>
+                <td><%= user.name %></td>
+                <td></td>
+            <% end %>
+        </tbody>
+    </table>
+</div>
