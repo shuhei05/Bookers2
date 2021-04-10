@@ -1,4 +1,4 @@
-<%= render 'users/list', users: @users  %>
+<%= render 'users/list', user: @user %>
 
 
 <div class="col-lg-8">
@@ -19,12 +19,13 @@
             <td><%= @book_list.body %></td>
 
             <% if @book_list.user == current_user %>
-            <td><%=link_to "edit", edit_book_path(@book_list) %></td>
+            <td><%=link_to "edit", edit_book_path(@book_list),class:"btn btn-success" %></td>
 
-            <td><%= link_to "destroy", book_path(@book_list),method: :delete %></td>
+            <td><%= link_to "destroy", book_path(@book_list),method: :delete,class:"btn btn-danger" %></td>
             <% end %>
 
         </tr>
     </tbody>
 </table>
+</div>
 </div>

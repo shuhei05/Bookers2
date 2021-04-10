@@ -1,3 +1,4 @@
+	<div class="mt-3">
 <div class="container">
     <div class="row">
 <div class="col-lg-3">
@@ -6,32 +7,32 @@
 
 <h2>User info</h2>
 
-<%= attachment_image_tag current_user,:profile_image, :fill,100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+<%= attachment_image_tag user,:profile_image, :fill,100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
 
 <table class="table">
     <tr>
         <th>name</th>
-        <th><%= current_user.name %></th>
+        <th><%= user.name %></th>
     </tr>
     <tr>
         <th>introduction</th>
-        <th><%= current_user.introduction %></th>
+        <th><%= user.introduction %></th>
     </tr>
 </table>
 
 
-<p><%= link_to "編集", edit_user_path(current_user.id),class:"btn btn-outline-secondary w-100 " %></p>
+<p><%= link_to "編集", edit_user_path(user.id),class:"btn btn-outline-secondary w-100 " %></p>
 
 
 <h2>New Book</h2>
 <p>Title</p>
-<%= form_with model:@book, local:true do |f| %>
-<div class="form-group">
-<label for="title1"><%= f.text_field :title,class:"w-100"%></label>
+    <%= form_with model:@book, local:true do |f| %>
+        <div class="form-group">
+            <label for="title1"><%= f.text_field :title,class:"w-100"%></label>
 
 <p>Opinion</p>
-<div class="form-group">
-<label for="body1"><%= f.text_area :body,class:"w-100" %></label>
+        <div class="form-group">
+            <label for="body1"><%= f.text_area :body,class:"w-100" %></label>
 
 <%= f.submit 'Create Book',class:"btn btn-success" %>
 <% end %>

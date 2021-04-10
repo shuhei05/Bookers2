@@ -1,0 +1,16 @@
+<div class="w-auto mx-auto mt-3" >
+<h1>Editing Book</h1>
+
+<p>Title</p>
+<%= form_with model:@book, local:true do |f| %>
+  <div class="form-group">
+    <label for="book1"><%= f.text_field :title,class:"w-100"%></label>
+  </div>
+  <p>Opinion</p>
+  <div class="form-group">
+    <label for="book2"><%= f.text_field :body,class:"w-100"%></label>
+  </div>
+<%= f.submit 'Update Book',class:"btn btn-success" %>
+<% end %>
+  <p></p>
+<%= link_to "Show",book_path(@book.id) %> | <%= link_to "Back", books_path %>
