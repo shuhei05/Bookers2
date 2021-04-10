@@ -1,5 +1,14 @@
 	<div class="mt-3">
 <div class="container">
+    <% if @book.errors.any? %>
+  <%= @book.errors.count %>件のerrorが発生しました
+    <ul>
+  <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+   </ul>
+<% end %>
+
     <div class="row">
 <div class="col-lg-3">
 

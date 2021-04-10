@@ -1,6 +1,15 @@
 <div class="w-auto mx-auto mt-3" >
 <h1>Editing Book</h1>
 
+  <% if @book.errors.any? %>
+  <%= @book.errors.count %>件のerrorが発生しました
+    <ul>
+  <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  　</ul>
+<% end %>
+
 <p>Title</p>
 <%= form_with model:@book, local:true do |f| %>
   <div class="form-group">
