@@ -7,9 +7,15 @@
 <table class="table">
     <tbody>
         <tr>
-            <td><%= attachment_image_tag current_user, :profile_image, :fill,50, 50, format: 'jpeg', fallback: "no_image.jpg" %></br>
-            <%= @user.name %></td>
-            <td><%= @book_list.title %></td>
+            <td><%= link_to user_path(@user.id) do %>
+                <%= attachment_image_tag @book_list.user, :profile_image, :fill,50, 50, format: 'jpeg', fallback: "no_image.jpg" %><% end %></br>
+            <%= link_to user_path(@user.id) do %><%= @user.name %>
+            <% end %></td>
+
+            <td><%= link_to book_path(@book_list.id) do %>
+            <%= @book_list.title %>
+            <% end %></td>
+
             <td><%= @book_list.body %></td>
 
             <% if @book_list.user == current_user %>
